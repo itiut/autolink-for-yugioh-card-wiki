@@ -3,6 +3,6 @@
     "message": "OCG Card Name Link"
   },
   "extDescription": {
-    "message": ""
+    "message": "Convert texts surrounded by 《》 to links to Yu-Gi-Oh! Card Wiki."
   }
 }

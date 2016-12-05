@@ -11,9 +11,12 @@
   "content_scripts": [
     {
       "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "exclude_matches": [
         "http://yugioh-wiki.net/*"
       ],
-      "css": ["style.css"],
       "js": ["bundle.js"]
     }
   ],

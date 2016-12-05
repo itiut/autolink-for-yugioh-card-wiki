@@ -3,6 +3,6 @@
     "message": "OCG Card Name Link"
   },
   "extDescription": {
-    "message": ""
+    "message": "《》で囲まれたテキストを遊戯王カードWikiへのリンクに変換します。"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "ocg-card-name-link",
   "version": "0.1.0",
-  "description": "",
+  "description": "Convert texts surrounded by 《》 to links to Yu-Gi-Oh! Card Wiki.",
   "main": "dist/bundle.js",
   "scripts": {
     "build": "webpack",
