@@ -1,0 +1,41 @@
+{
+  "name": "ocg-card-name-link",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "webpack",
+    "clean": "rm -f dist/bundle.js{,.map}",
+    "lint": "eslint src test",
+    "start": "webpack -dw",
+    "test": "npm run lint && karma start",
+    "zip": "npm run clean && npm run build && zip -r dist.zip dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itiut/ocg-card-name-link"
+  },
+  "author": "Yuichi Tanikawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itiut/ocg-card-name-link/issues"
+  },
+  "homepage": "https://github.com/itiut/ocg-card-name-link",
+  "dependencies": {
+    "encoding-japanese": "^1.0.25"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1",
+    "html-loader": "^0.4.4",
+    "json-loader": "^0.5.4",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-mocha-reporter": "^2.2.1",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.2.0",
+    "power-assert": "^1.4.2",
+    "webpack": "^1.13.3",
+    "webpack-espower-loader": "^1.0.1"
+  }
+}
