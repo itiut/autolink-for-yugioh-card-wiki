@@ -40,16 +40,26 @@
 const domainComponent = require('./domain.vue');
 
 function restoreDomains() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     chrome.storage.sync.get({ allowedDomains: [] }, (items) => {
+      if (chrome.runtime.lastError) {
+        reject(chrome.runtime.lastError.message);
+        return;
+      }
       resolve(items.allowedDomains);
     });
   });
 }
 
 function saveDomains(domains = []) {
-  return new Promise((resolve) => {
-    chrome.storage.sync.set({ allowedDomains: domains }, resolve);
+  return new Promise((resolve, reject) => {
+    chrome.storage.sync.set({ allowedDomains: domains }, () => {
+      if (chrome.runtime.lastError) {
+        reject(chrome.runtime.lastError.message);
+        return;
+      }
+      resolve();
+    });
   });
 }
 
