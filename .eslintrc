@@ -1,10 +1,22 @@
 {
-  "extends": "eslint:recommended",
+  "extends": "airbnb-base",
   "env": {
     "browser": true,
     "commonjs": true,
-    "es6": true,
-    "mocha": true,
-    "node": true
+    "mocha": true
+  },
+  "parserOptions": {
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-cond-assign": ["error", "except-parens"],
+    "no-multi-str": "warn",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-restricted-syntax": [
+      "error",
+      "ForInStatement",
+      "LabeledStatement",
+      "WithStatement"
+    ]
   }
 }

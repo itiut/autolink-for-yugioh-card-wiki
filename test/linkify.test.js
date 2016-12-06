@@ -11,7 +11,7 @@ describe('linkify', () => {
     });
 
     it('creates a link in a <p>', () => {
-      document.body.innerHTML = require('./fixtures/one-in-p.html');
+      document.body.innerHTML = require('./fixtures/one-in-p.html');  // eslint-disable-line global-require
       linkify(document.body);
       const as = document.querySelectorAll('a');
       assert.equal(as.length, 1);
@@ -21,7 +21,7 @@ describe('linkify', () => {
     });
 
     it('creates links in a <p>', () => {
-      document.body.innerHTML = require('./fixtures/several-in-p.html');
+      document.body.innerHTML = require('./fixtures/several-in-p.html');  // eslint-disable-line global-require
       linkify(document.body);
       const as = document.querySelectorAll('a');
       assert.equal(as.length, 3);
@@ -31,7 +31,7 @@ describe('linkify', () => {
     });
 
     it('does not create links in a <a>', () => {
-      document.body.innerHTML = require('./fixtures/several-in-a.html');
+      document.body.innerHTML = require('./fixtures/several-in-a.html');  // eslint-disable-line global-require
       linkify(document.body);
       const as = document.querySelectorAll('a');
       assert.equal(as.length, 1);

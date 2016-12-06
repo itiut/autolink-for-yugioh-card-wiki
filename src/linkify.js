@@ -29,7 +29,8 @@ function replaceWithLink(targetNode) {
 }
 
 function linkify(rootNode) {
-  const snapshot = document.evaluate(xpathExpr, rootNode, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+  const snapshot =
+    document.evaluate(xpathExpr, rootNode, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
   for (let i = 0; i < snapshot.snapshotLength; i++) {
     let node = snapshot.snapshotItem(i);
     const re = /《(.+?)》/g;

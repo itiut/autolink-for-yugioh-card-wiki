@@ -1,5 +1,5 @@
-module.exports = function (config) {
-  var configuration = {
+module.exports = (config) => {
+  const configuration = {
     basePath: '',
     frameworks: ['mocha'],
     files: [
@@ -20,7 +20,7 @@ module.exports = function (config) {
       },
     },
     webpackMiddleware: {
-      stats: 'errors-only'
+      stats: 'errors-only',
     },
     reporters: ['mocha'],
     port: 9876,
@@ -31,11 +31,11 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeTravisCi: {
         base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
+        flags: ['--no-sandbox'],
+      },
     },
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
   };
 
   if (process.env.TRAVIS) {
