@@ -41,8 +41,8 @@ const domainComponent = require('./domain.vue');
 
 function restoreDomains() {
   return new Promise((resolve) => {
-    chrome.storage.sync.get({ allowedDomains: [] }, (obj) => {
-      resolve(obj.allowedDomains);
+    chrome.storage.sync.get({ allowedDomains: [] }, (items) => {
+      resolve(items.allowedDomains);
     });
   });
 }
