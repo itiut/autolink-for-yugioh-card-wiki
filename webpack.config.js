@@ -1,8 +1,11 @@
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+    main: './src/main.js',
+    options: './src/options.js',
+  },
   output: {
-    path: './dist',
-    filename: 'bundle.js',
+    filename: '[name].js',
+    path: './dist/js',
   },
   module: {
     loaders: [

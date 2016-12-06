@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/itiut/ocg-card-name-link",
   "license": "MIT",
-  "main": "dist/bundle.js",
+  "main": "dist/js/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/itiut/ocg-card-name-link"

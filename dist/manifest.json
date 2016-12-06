@@ -17,9 +17,13 @@
       "exclude_matches": [
         "http://yugioh-wiki.net/*"
       ],
-      "js": ["bundle.js"]
+      "js": ["js/main.js"]
     }
   ],
   "permissions": [],
+  "options_ui": {
+    "page": "html/options.html",
+    "chrome_style": true
+  },
   "minimum_chrome_version": "53"
 }
