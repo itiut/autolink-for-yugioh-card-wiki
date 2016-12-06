@@ -5,9 +5,15 @@
     "commonjs": true,
     "mocha": true
   },
+  "globals": {
+    "chrome": true
+  },
   "parserOptions": {
     "sourceType": "script"
   },
+  "plugins": [
+    "html"
+  ],
   "rules": {
     "no-cond-assign": ["error", "except-parens"],
     "no-multi-str": "warn",

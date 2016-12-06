@@ -1,3 +1,7 @@
+const webpackConfig = require('./webpack.config');
+delete webpackConfig.entry;
+delete webpackConfig.output;
+
 module.exports = (config) => {
   const configuration = {
     basePath: '',
@@ -10,15 +14,7 @@ module.exports = (config) => {
       'test/*.test.js': ['webpack'],
       'test/fixtures/*.html': ['webpack'],
     },
-    webpack: {
-      module: {
-        loaders: [
-          { test: /\.test\.js$/, loader: 'webpack-espower-loader' },
-          { test: /\.html$/, loader: 'html' },
-          { test: /\.json$/, loader: 'json' },
-        ],
-      },
-    },
+    webpack: webpackConfig,
     webpackMiddleware: {
       stats: 'errors-only',
     },

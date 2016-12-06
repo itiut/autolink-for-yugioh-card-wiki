@@ -20,7 +20,9 @@
       "js": ["js/main.js"]
     }
   ],
-  "permissions": [],
+  "permissions": [
+    "storage"
+  ],
   "options_ui": {
     "page": "html/options.html",
     "chrome_style": true
