@@ -36,9 +36,7 @@
   </section>
 </template>
 
-<script>
-'use strict';
-
+<script lang="strict">
 const domainComponent = require('./domain.vue');
 
 function restoreDomains() {

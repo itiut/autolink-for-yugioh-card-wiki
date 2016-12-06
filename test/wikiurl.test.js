@@ -1,5 +1,3 @@
-'use strict';
-
 const assert = require('power-assert');
 
 const wikiURL = require('../src/wikiurl');

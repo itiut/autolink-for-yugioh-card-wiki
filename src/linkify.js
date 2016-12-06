@@ -1,5 +1,3 @@
-'use strict';
-
 const wikiURL = require('./wikiurl');
 
 const xpathExpr = './/text()[\

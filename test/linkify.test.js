@@ -1,5 +1,3 @@
-'use strict';
-
 const assert = require('power-assert');
 
 const linkify = require('../src/linkify');

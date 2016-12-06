@@ -30,9 +30,7 @@
   </li>
 </template>
 
-<script>
-'use strict';
-
+<script lang="strict">
 module.exports = {
   props: ['domain'],
 };

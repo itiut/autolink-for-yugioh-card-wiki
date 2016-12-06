@@ -1,5 +1,3 @@
-'use strict';
-
 const linkify = require('./linkify');
 
 linkify(document.body);

@@ -10,6 +10,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.html$/, loader: 'html' },
+      { test: /\.js$/, loader: 'strict' },
       { test: /\.json$/, loader: 'json' },
       { test: /\.test\.js$/, loader: 'webpack-espower' },
       { test: /\.vue$/, loader: 'vue' },
