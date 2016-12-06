@@ -1,6 +1,6 @@
 {
   "name": "ocg-card-name-link",
-  "description": "Convert texts surrounded by 《》 to links to Yu-Gi-Oh! Card Wiki.",
+  "description": "Convert texts surrounded by 《》 into links to Yu-Gi-Oh! Card Wiki.",
   "version": "0.1.0",
   "author": "Yuichi Tanikawa",
   "bugs": {
