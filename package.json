@@ -1,26 +1,11 @@
 {
   "name": "ocg-card-name-link",
-  "version": "0.1.0",
   "description": "Convert texts surrounded by 《》 to links to Yu-Gi-Oh! Card Wiki.",
-  "main": "dist/bundle.js",
-  "scripts": {
-    "build": "webpack",
-    "clean": "rm -f dist/bundle.js{,.map}",
-    "lint": "eslint src test",
-    "start": "webpack -dw",
-    "test": "npm run lint && karma start",
-    "zip": "npm run clean && npm run build && zip -r dist.zip dist"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/itiut/ocg-card-name-link"
-  },
+  "version": "0.1.0",
   "author": "Yuichi Tanikawa",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/itiut/ocg-card-name-link/issues"
   },
-  "homepage": "https://github.com/itiut/ocg-card-name-link",
   "dependencies": {
     "encoding-japanese": "^1.0.25"
   },
@@ -37,5 +22,19 @@
     "power-assert": "^1.4.2",
     "webpack": "^1.13.3",
     "webpack-espower-loader": "^1.0.1"
+  },
+  "homepage": "https://github.com/itiut/ocg-card-name-link",
+  "license": "MIT",
+  "main": "dist/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itiut/ocg-card-name-link"
+  },
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint src test",
+    "start": "webpack -dw",
+    "test": "npm run lint && karma start",
+    "zip": "npm run build && zip -r dist.zip dist -x \\*.js.map"
   }
 }
