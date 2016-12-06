@@ -15,4 +15,10 @@ module.exports = {
       { test: /\.vue$/, loader: 'vue' },
     ],
   },
+  resolve: {
+    alias: {
+      'encoding-japanese$': 'encoding-japanese/encoding.min.js',
+      vue$: 'vue/dist/vue.runtime.min.js',
+    },
+  },
 };

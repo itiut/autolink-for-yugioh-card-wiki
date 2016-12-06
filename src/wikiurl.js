@@ -1,6 +1,6 @@
 'use strict';
 
-const encoding = require('encoding-japanese/encoding.min');
+const encoding = require('encoding-japanese');
 
 const baseURL = 'http://yugioh-wiki.net/index.php';
 
