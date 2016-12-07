@@ -38,30 +38,10 @@
 
 <script>
 import domainComponent from './domain.vue';
+import DomainService from '../DomainService';
 
-function restoreDomains() {
-  return new Promise((resolve, reject) => {
-    chrome.storage.sync.get({ allowedDomains: [] }, (items) => {
-      if (chrome.runtime.lastError) {
-        reject(chrome.runtime.lastError.message);
-        return;
-      }
-      resolve(items.allowedDomains);
-    });
-  });
-}
-
-function saveDomains(domains = []) {
-  return new Promise((resolve, reject) => {
-    chrome.storage.sync.set({ allowedDomains: domains }, () => {
-      if (chrome.runtime.lastError) {
-        reject(chrome.runtime.lastError.message);
-        return;
-      }
-      resolve();
-    });
-  });
-}
+const clog = console.log.bind(console);
+let domainService;
 
 export default {
   components: { domainComponent },
@@ -73,21 +53,20 @@ export default {
   },
   methods: {
     addDomain() {
+      this.newDomain = DomainService.normalize(this.newDomain);
       if (this.newDomain && !this.domains.includes(this.newDomain)) {
-        this.domains.push(this.newDomain);
-        this.newDomain = '';
-        saveDomains(this.domains);
+        domainService.add(this.newDomain).then(() => {
+          this.newDomain = '';
+        }).catch(clog);
       }
     },
     deleteDomain(index) {
-      this.domains.splice(index, 1);
-      saveDomains(this.domains);
+      domainService.deleteAt(index).catch(clog);
     },
   },
   mounted() {
-    restoreDomains().then((domains) => {
-      this.domains = domains;
-    });
+    domainService = new DomainService(this.domains);
+    domainService.restore().catch(clog);
   },
 };
 </script>
