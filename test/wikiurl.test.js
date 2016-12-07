@@ -6,7 +6,7 @@ describe('wikiURL', () => {
   describe('default(name)', () => {
     it('returns URL of yugioh-wiki.net', () => {
       const url = wikiURL('');
-      assert.ok(url.startsWith('http://yugioh-wiki.net/index.php?'));
+      assert(url.startsWith('http://yugioh-wiki.net/index.php?'));
     });
 
     it('converts name to EUC-JP URI-encoded query', () => {
@@ -33,7 +33,7 @@ describe('wikiURL', () => {
       for (const [i, { name, query }] of tests.entries()) {
         const url = wikiURL(name);
         const got = url.split('?')[1];
-        assert.equal(got, query, `#${i}: wikiURL('${name}') failed`);
+        assert(got === query, `#${i}: wikiURL('${name}') failed`);
       }
     });
   });
