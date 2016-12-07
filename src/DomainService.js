@@ -6,7 +6,7 @@ export default class DomainService {
   }
 
   static normalize(domain) {
-    return domain;
+    return domain.replace(/^.*?:\/\//, '').split('/')[0];
   }
 
   static persist(domains = []) {
