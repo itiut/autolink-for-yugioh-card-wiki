@@ -1,4 +1,4 @@
-const wikiURL = require('./wikiurl');
+import wikiURL from './wikiurl';
 
 const xpathExpr = './/text()[\
       not(ancestor::a) \
@@ -26,7 +26,7 @@ function replaceWithLink(targetNode) {
   targetNode.parentNode.replaceChild(newNode, targetNode);
 }
 
-function linkify(rootNode) {
+export default function linkify(rootNode) {
   const snapshot =
     document.evaluate(xpathExpr, rootNode, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
   for (let i = 0; i < snapshot.snapshotLength; i++) {
@@ -42,5 +42,3 @@ function linkify(rootNode) {
     }
   }
 }
-
-module.exports = linkify;

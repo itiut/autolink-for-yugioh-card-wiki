@@ -1,5 +1,5 @@
-const Vue = require('vue');
+import Vue from 'vue';
 
-const optionsComponent = require('./components/options.vue');
+import optionsComponent from './components/options.vue';
 
 new Vue(optionsComponent).$mount('#app');

@@ -30,8 +30,8 @@
   </li>
 </template>
 
-<script lang="strict">
-module.exports = {
+<script>
+export default {
   props: ['domain'],
 };
 </script>

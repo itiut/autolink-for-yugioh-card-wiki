@@ -11,6 +11,10 @@
     "vue": "^2.1.4"
   },
   "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-espower": "^2.3.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
     "css-loader": "^0.26.1",
     "eslint": "^3.11.1",
     "eslint-config-airbnb-base": "^10.0.1",
@@ -25,11 +29,9 @@
     "karma-webpack": "^1.8.0",
     "mocha": "^3.2.0",
     "power-assert": "^1.4.2",
-    "strict-loader": "^1.1.0",
     "vue-loader": "^10.0.2",
     "vue-template-compiler": "^2.1.4",
-    "webpack": "^1.13.3",
-    "webpack-espower-loader": "^1.0.1"
+    "webpack": "^1.13.3"
   },
   "homepage": "https://github.com/itiut/ocg-card-name-link",
   "license": "MIT",

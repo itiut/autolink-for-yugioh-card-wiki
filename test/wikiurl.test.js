@@ -1,6 +1,6 @@
-const assert = require('power-assert');
+import assert from 'power-assert';
 
-const wikiURL = require('../src/wikiurl');
+import wikiURL from '../src/wikiurl';
 
 describe('wikiURL', () => {
   describe('default(name)', () => {

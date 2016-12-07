@@ -1,4 +1,4 @@
-const linkify = require('./linkify');
+import linkify from './linkify';
 
 linkify(document.body);
 

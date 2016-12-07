@@ -36,8 +36,8 @@
   </section>
 </template>
 
-<script lang="strict">
-const domainComponent = require('./domain.vue');
+<script>
+import domainComponent from './domain.vue';
 
 function restoreDomains() {
   return new Promise((resolve, reject) => {
@@ -63,7 +63,7 @@ function saveDomains(domains = []) {
   });
 }
 
-module.exports = {
+export default {
   components: { domainComponent },
   data() {
     return {
