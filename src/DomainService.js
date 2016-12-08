@@ -5,6 +5,40 @@ export default class DomainService {
     this[domainsKey] = domains;
   }
 
+  static addPermission(domain) {
+    const origins = [`*://${domain}/`];
+    return new Promise((resolve, reject) => {
+      chrome.permissions.request({ origins }, (granted) => {
+        if (chrome.runtime.lastError) {
+          reject(chrome.runtime.lastError.message);
+          return;
+        }
+        if (!granted) {
+          reject();
+          return;
+        }
+        resolve();
+      });
+    });
+  }
+
+  static deletePermission(domain) {
+    const origins = [`*://${domain}/`];
+    return new Promise((resolve, reject) => {
+      chrome.permissions.remove({ origins }, (removed) => {
+        if (chrome.runtime.lastError) {
+          reject(chrome.runtime.lastError.message);
+          return;
+        }
+        if (!removed) {
+          reject();
+          return;
+        }
+        resolve();
+      });
+    });
+  }
+
   static normalize(domain) {
     return domain.replace(/^.*?:\/\//, '').split('/')[0];
   }
@@ -31,16 +65,16 @@ export default class DomainService {
   }
 
   add(domain) {
-    return DomainService.persist(this.domains.concat(domain)).then(() => {
-      this.domains.push(domain);
-    });
+    return DomainService.addPermission(domain)
+      .then(() => DomainService.persist(this.domains.concat(domain)))
+      .then(() => this.domains.push(domain));
   }
 
   deleteAt(index) {
     const remainingDomains = this.domains.filter((_, i) => i !== index);
-    return DomainService.persist(remainingDomains).then(() => {
-      this.domains = remainingDomains;
-    });
+    return DomainService.deletePermission(this.domains[index])
+      .then(() => DomainService.persist(remainingDomains))
+      .then(() => (this.domains = remainingDomains));
   }
 
   restore() {
