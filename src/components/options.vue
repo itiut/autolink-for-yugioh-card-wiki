@@ -10,7 +10,7 @@
   }
 
   .domains__empty {
-    color: rgb(119, 119, 119);
+    color: #777777;
     padding: 5px;
   }
 
