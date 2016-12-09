@@ -54,13 +54,12 @@ export default class DomainService {
 
   add(domain) {
     return DomainService.addPermission(domain)
-      .then(() => this.domains.push(domain));
+      .then(() => this.restore());
   }
 
   deleteAt(index) {
-    const remainingDomains = this.domains.filter((_, i) => i !== index);
     return DomainService.deletePermission(this.domains[index])
-      .then(() => (this.domains = remainingDomains));
+      .then(() => this.restore());
   }
 
   restore() {
@@ -70,9 +69,7 @@ export default class DomainService {
           reject(chrome.runtime.lastError.message);
           return;
         }
-        if (origins.length > 0) {
-          this.domains = origins.map(DomainService.normalize);
-        }
+        this.domains = origins.map(DomainService.normalize);
         resolve();
       });
     });
