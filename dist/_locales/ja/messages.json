@@ -4,5 +4,17 @@
   },
   "extDescription": {
     "message": "《》で囲まれたテキストを遊戯王カードWikiへのリンクに変換します。"
+  },
+  "options__allowedDomains": {
+    "message": "実行するドメイン"
+  },
+  "options__allowedDomainsDescription": {
+    "message": "これらのドメインのサイトで拡張機能を実行します。"
+  },
+  "options__noDomains": {
+    "message": "実行するドメインはありません"
+  },
+  "options__add": {
+    "message": "追加"
   }
 }

@@ -4,5 +4,17 @@
   },
   "extDescription": {
     "message": "Convert texts surrounded by 《》 into links to Yu-Gi-Oh! Card Wiki."
+  },
+  "options__allowedDomains": {
+    "message": "Allowed Domains"
+  },
+  "options__allowedDomainsDescription": {
+    "message": "This extension runs in these sites."
+  },
+  "options__noDomains": {
+    "message": "no domains"
+  },
+  "options__add": {
+    "message": "Add"
   }
 }
