@@ -1,10 +1,10 @@
 {
-  "name": "ocg-card-name-link",
+  "name": "autolink-for-yugioh-card-wiki",
   "description": "Convert texts surrounded by 《》 into links to Yu-Gi-Oh! Card Wiki.",
   "version": "0.1.0",
   "author": "Yuichi Tanikawa",
   "bugs": {
-    "url": "https://github.com/itiut/ocg-card-name-link/issues"
+    "url": "https://github.com/itiut/autolink-for-yugioh-card-wiki/issues"
   },
   "dependencies": {
     "encoding-japanese": "^1.0.25",
@@ -33,12 +33,12 @@
     "vue-template-compiler": "^2.1.4",
     "webpack": "^1.13.3"
   },
-  "homepage": "https://github.com/itiut/ocg-card-name-link",
+  "homepage": "https://github.com/itiut/autolink-for-yugioh-card-wiki",
   "license": "MIT",
   "main": "dist/js/main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/itiut/ocg-card-name-link"
+    "url": "https://github.com/itiut/autolink-for-yugioh-card-wiki"
   },
   "scripts": {
     "build": "webpack",

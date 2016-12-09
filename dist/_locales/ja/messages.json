@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "OCG Card Name Link"
+    "message": "Autolink for 遊戯王カードWiki"
   },
   "extDescription": {
     "message": "《》で囲まれたテキストを遊戯王カードWikiへのリンクに変換します。"

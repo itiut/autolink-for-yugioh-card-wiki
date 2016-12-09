@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "OCG Card Name Link"
+    "message": "Autolink for Yu-Gi-Oh! Card Wiki"
   },
   "extDescription": {
     "message": "Convert texts surrounded by 《》 into links to Yu-Gi-Oh! Card Wiki."

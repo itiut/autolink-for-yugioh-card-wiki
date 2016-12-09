@@ -20,7 +20,7 @@ function replaceWithLink(targetNode) {
   const newNode = document.createElement('a');
   newNode.setAttribute('href', wikiURL(targetNode.textContent));
   newNode.setAttribute('target', '_blank');
-  newNode.classList.add('OCGCardNameLink__link');
+  newNode.classList.add('AutolinkForYGOCardWiki__link');
   newNode.appendChild(document.createTextNode(targetNode.textContent));
 
   targetNode.parentNode.replaceChild(newNode, targetNode);
