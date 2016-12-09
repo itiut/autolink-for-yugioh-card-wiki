@@ -43,6 +43,34 @@ export default class DomainService {
     return domain.replace(/^.*?:\/\//, '').split('/')[0];
   }
 
+  static resetContentScript(domains = []) {
+    const rule = {
+      conditions: domains.map(domain => new chrome.declarativeContent.PageStateMatcher({
+        pageUrl: { hostEquals: domain },
+      })),
+      actions: [
+        new chrome.declarativeContent.RequestContentScript({
+          js: ['js/main.js'],
+        }),
+      ],
+    };
+    return new Promise((resolve, reject) => {
+      chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
+        if (domains.length === 0) {
+          resolve();
+          return;
+        }
+        chrome.declarativeContent.onPageChanged.addRules([rule], () => {
+          if (chrome.runtime.lastError) {
+            reject(chrome.runtime.lastError.message);
+            return;
+          }
+          resolve();
+        });
+      });
+    });
+  }
+
   get domains() {
     return this[domainsKey];
   }
@@ -54,12 +82,14 @@ export default class DomainService {
 
   add(domain) {
     return DomainService.addPermission(domain)
-      .then(() => this.restore());
+      .then(() => this.restore())
+      .then(() => DomainService.resetContentScript(this.domains));
   }
 
   deleteAt(index) {
     return DomainService.deletePermission(this.domains[index])
-      .then(() => this.restore());
+      .then(() => this.restore())
+      .then(() => DomainService.resetContentScript(this.domains));
   }
 
   restore() {

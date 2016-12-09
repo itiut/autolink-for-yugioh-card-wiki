@@ -8,19 +8,8 @@
   "homepage_url": "https://github.com/itiut/ocg-card-name-link",
   "icons": {
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "exclude_matches": [
-        "http://yugioh-wiki.net/*"
-      ],
-      "js": ["js/main.js"]
-    }
-  ],
   "permissions": [
+    "declarativeContent"
   ],
   "optional_permissions": [
     "<all_urls>"
