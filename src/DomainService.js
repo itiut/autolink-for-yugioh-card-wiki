@@ -63,12 +63,8 @@ export default class DomainService {
   }
 
   restore() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       chrome.permissions.getAll(({ origins = [] }) => {
-        if (chrome.runtime.lastError) {
-          reject(chrome.runtime.lastError.message);
-          return;
-        }
         this.domains = origins.map(DomainService.normalize);
         resolve();
       });
