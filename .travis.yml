@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+addons:
+  apt:
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+language: node_js
+node_js:
+- '6'
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+notifications:
+  slack:
+    secure: aYYDWhfbsoltFvWOt64f1dQQuZ+ANrLr+bISQ4QLsD6JFAWnyA4Q4hA2Ai3zjxkDZnm9PLQjLU/X0HUdm1BS8Se4r1rElTCOU/YHnT11itDsKp1ON0snj4CwmV9JiMoN3xRDx03IF1mBvboKuucjuZ7ML/aDzM5iclzrfY2/foahsShsI6IH+QbD6TVUs+FyqNphS6mzdSyx1VbNs/SgVCAj0+Qcwi4I/PeCvFotKc6dAoXswdIZ+e7ggscxw7SUK6gctNjtsM3ys1s0WerxA05ggEP+JjmRuzjx35SJ+D3RBPAif4OScEM2T/F8Uu1JaOkhV6O/aG1NwQ3Jm1bd978bBh2aB6E8E+zl2TnC/A4WrPyDEKzwTJAizzJqtncaFVaDWjDnGE+Uv3e7p3uaV5+snK1cKybqy7HPvZ9yNx2p5GL61dLIwCh+CbYcXQnhUN2QUmDSoAf+Vkupm/vFzcrhwGuzzCyCMlpewMGN7r2IloO5eWp/qBnM2SriUQ5wtHxFr+DJjNRjNMF6NuX49bfvY7idiQIPBTlOoAWUg+tYw0ixfpSZAl5huZw3PSVkTU/Ter6QCCWL+fAagf6kgNBLTHgMgsOT9YPoZIRLyfATP+BG4vq4SFJRZxqWsqbaBwBdzsYPSlxYvBv1YP3Fj/VlWirMqTIJkr3uuoZXVs8=
