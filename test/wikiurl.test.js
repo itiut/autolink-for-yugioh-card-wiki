@@ -28,6 +28,9 @@ describe('wikiURL', () => {
         // encodes spaces, does not encode dots
         { name: '《Ｎｏ.１０１ Ｓ・Ｈ・Ａｒｋ Ｋｎｉｇｈｔ》', query: '%A1%D4%A3%CE%A3%EF.%A3%B1%A3%B0%A3%B1%20%A3%D3%A1%A6%A3%C8%A1%A6%A3%C1%A3%F2%A3%EB%20%A3%CB%A3%EE%A3%E9%A3%E7%A3%E8%A3%F4%A1%D5' },
         { name: '《No.101 S・H・Ark Knight》', query: '%A1%D4%A3%CE%A3%EF.%A3%B1%A3%B0%A3%B1%20%A3%D3%A1%A6%A3%C8%A1%A6%A3%C1%A3%F2%A3%EB%20%A3%CB%A3%EE%A3%E9%A3%E7%A3%E8%A3%F4%A1%D5' },
+
+        // fix mistakenly converted dots (#1)
+        { name: '《ＲＲ－ライズ・ファルコン》', query: '%A1%D4%A3%D2%A3%D2%A1%DD%A5%E9%A5%A4%A5%BA%A1%A6%A5%D5%A5%A1%A5%EB%A5%B3%A5%F3%A1%D5' },
       ];
 
       for (const [i, { name, query }] of tests.entries()) {
