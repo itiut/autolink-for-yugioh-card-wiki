@@ -14,3 +14,8 @@ Please set allowed domains to run this extension in the option page.
 References
 ----
 - [Wikiオートリンク](http://aitsu.skr.jp/2006/07/15/120.html)
+
+Changelog
+----
+### 0.1.1
+- Fix links of the card whose name contains `ァル` ([#1](https://github.com/itiut/autolink-for-yugioh-card-wiki/issues/1))

@@ -14,3 +14,8 @@ Autolink for 遊戯王カードWiki
 参考
 ----
 - [Wikiオートリンク](http://aitsu.skr.jp/2006/07/15/120.html)
+
+変更履歴
+----
+### v0.1.1
+- `ァル`を含むカード名のリンクを修正 ([#1](https://github.com/itiut/autolink-for-yugioh-card-wiki/issues/1))
